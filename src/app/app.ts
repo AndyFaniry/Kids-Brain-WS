@@ -30,7 +30,7 @@ export class App {
       optionsSuccessStatus: 204,
     };
     this.app.use(cors(corsOptions));
-    this.app.use("/api/v1", appRoutes);
+    this.app.use("/api", appRoutes);
   }
 }
 

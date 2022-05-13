@@ -65,7 +65,6 @@ class UserService {
       firstName: client.firstName,
       lastName: client.lastName,
     };
-    // await this.sendSignupSuccessMail(createdClient);
     return this.getSignedUser(user);
   }
 
@@ -80,7 +79,7 @@ class UserService {
   async sendSignupSuccessMail(user: User) {
     await mailService.sendMail({
       content: await mailRenderService.renderSignupSuccess(user),
-      subject: `Bienvenue ${user.lastName} ${user.firstName} sur e-Kaly`,
+      subject: `Bienvenue ${user.lastName} ${user.firstName} sur Kids Brain`,
       to: user.login,
     });
   }
