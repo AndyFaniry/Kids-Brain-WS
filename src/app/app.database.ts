@@ -17,7 +17,6 @@ class Database {
 
     mongoose.connection.once("open", () => {
       cb();
-      console.log(`Database opened: ${connexionString}`);
     });
 
     mongoose.connection.on("error", () => {
