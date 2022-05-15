@@ -18,12 +18,14 @@ class UserRouter {
     this.router
       .route("/login")
       .post(
+        passport.authenticate("local", { session: false }),
         userController.login.bind(userController),
       );
 
     this.router
       .route("/")
       .get(
+        passport.authenticate("jwt", { session: false }),
         userController.getAll.bind(userController),
       );
     this.router

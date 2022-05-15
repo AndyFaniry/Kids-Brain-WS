@@ -12,7 +12,6 @@ class UserService {
   }
 
   async create(item: User): Promise<User> {
-    // delete item._id;
     return userModel.create(item);
   }
 
