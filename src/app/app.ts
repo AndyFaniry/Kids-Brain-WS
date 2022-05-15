@@ -17,7 +17,7 @@ export class App {
     this.app.use(bodyParser.urlencoded({ extended: true }));
     this.app.use(bodyParser.json({ limit: "50mb" }));
     this.initRoutes();
-    return this.app.listen(port, () => {
+    return this.app.listen(process.env.PORT || port, () => {
       console.log(`app started, listening on port ${port}`);
     });
   }
