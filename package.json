@@ -2,7 +2,7 @@
   "name": "kids-brain-ws",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon --exec npx ts-node  src/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,7 +30,12 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "ts-node": "^10.7.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "bcryptjs": "^2.4.3",
+    "jquery": "^3.6.0",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "eslint": "^8.11.0",
