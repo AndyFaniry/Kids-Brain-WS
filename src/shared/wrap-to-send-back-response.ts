@@ -6,6 +6,6 @@ export const wrapToSendBackResponse = <T>(
   next: NextFunction,
 ): void => {
   p.then((response) =>
-    res.status(200).json({ data: response }),
+    res.status(200).json(response),
   ).catch((err) => next(err));
 };
