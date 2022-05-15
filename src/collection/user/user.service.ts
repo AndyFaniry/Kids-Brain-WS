@@ -61,7 +61,6 @@ class UserService {
     const user = {
       _id: client._id,
       login: client.login,
-      userType: client.userType,
       firstName: client.firstName,
       lastName: client.lastName,
     };
