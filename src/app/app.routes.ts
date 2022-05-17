@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { userRoutes } from "../collection/user/user.route";
+import { VideoRoutes } from "../collection/video/video.route";
 class AppRouter {
   router: Router;
   constructor() {
@@ -13,6 +14,7 @@ class AppRouter {
     );
 
     this.router.use("/user", userRoutes);
+    this.router.use("/video", VideoRoutes);
   }
 }
 
