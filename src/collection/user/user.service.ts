@@ -81,6 +81,16 @@ class UserService {
       to: user.login,
     });
   }
+  async updateByLogin(item: User): Promise<User | null> {
+    return userModel
+      .findOneAndUpdate({login: item.login}, item, { new: true })
+      .exec();
+  }
+  async getByLogin(item: User): Promise<User | null> {
+    return userModel
+      .findOne({login: item.login})
+      .exec();
+  }
 }
 
 export const userService = new UserService();

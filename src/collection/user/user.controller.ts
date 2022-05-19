@@ -53,6 +53,20 @@ class UserController implements ControllerRead, ControllerWrite {
       next
     );
   }
+  updateByLogin(req: Request, res: Response, next: NextFunction): void {
+    wrapToSendBackResponse<User | null>(
+      userService.updateByLogin(req.body),
+      res,
+      next
+    );
+  }
+  getByLogin(req: Request, res: Response, next: NextFunction): void {
+    wrapToSendBackResponse<User | null>(
+      userService.getByLogin(req.body),
+      res,
+      next
+    );
+  }
 }
 
 export const userController = new UserController();
