@@ -87,6 +87,8 @@ class UserService {
     var type = split[0];
     if(type != 'crypted'){
       item.password = await bcrypt.hash(mdp, 10);
+    }else{
+      item.password = mdp;
     }
     return userModel
       .findOneAndUpdate({login: item.login}, item, { new: true })
