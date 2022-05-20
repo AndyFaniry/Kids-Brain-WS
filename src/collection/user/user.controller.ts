@@ -62,7 +62,7 @@ class UserController implements ControllerRead, ControllerWrite {
   }
   getByLogin(req: Request, res: Response, next: NextFunction): void {
     wrapToSendBackResponse<User | null>(
-      userService.getByLogin(req.body),
+      userService.getByLogin(req.params.userId),
       res,
       next
     );

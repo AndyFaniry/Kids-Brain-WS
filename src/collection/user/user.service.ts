@@ -86,9 +86,9 @@ class UserService {
       .findOneAndUpdate({login: item.login}, item, { new: true })
       .exec();
   }
-  async getByLogin(item: User): Promise<User | null> {
+  async getByLogin(login: string): Promise<User | null> {
     return userModel
-      .findOne({login: item.login})
+      .findOne({login: login})
       .exec();
   }
 }

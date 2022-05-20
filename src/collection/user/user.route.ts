@@ -21,13 +21,8 @@ class UserRouter {
         passport.authenticate("local", { session: false }),
         userController.login.bind(userController),
       );
-
     this.router
-      .route("/")
-      .get(
-        passport.authenticate("jwt", { session: false }),
-        userController.getByLogin.bind(userController),
-      )
+      .route("/update")
       .put(
         passport.authenticate("jwt", { session: false }),
         userController.updateByLogin.bind(userController),
@@ -36,7 +31,7 @@ class UserRouter {
       .route("/:userId")
       .get(
         passport.authenticate("jwt", { session: false }),
-        userController.getById.bind(userController),
+        userController.getByLogin.bind(userController),
       )
       .put(
         passport.authenticate("jwt", { session: false }),
