@@ -30,6 +30,7 @@ class UserRouter {
     this.router
       .route("/:userId")
       .get(
+        passport.authenticate("jwt", { session: false }),
         userController.getByLogin.bind(userController),
       )
       .put(
