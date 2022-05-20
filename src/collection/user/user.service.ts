@@ -82,6 +82,12 @@ class UserService {
     });
   }
   async updateByLogin(item: User): Promise<User | null> {
+    var split = item.password.split('-');
+    var mdp = split[1];
+    var type = split[0];
+    if(type != 'crypted'){
+      item.password = await bcrypt.hash(mdp, 10);
+    }
     return userModel
       .findOneAndUpdate({login: item.login}, item, { new: true })
       .exec();
